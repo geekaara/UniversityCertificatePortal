@@ -7,27 +7,24 @@ const CertVerification = () => {
     const [verificationID, setVerificationID] = useState('');
     const [error, setError] = useState('')
     const navigate = useNavigate()
-    // const handleSubmit = async (e) => {
-    //   e.preventDefault();
-    //   setError('');
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      setError('');
     
-    //   try {
-    //     // Query the Firebase database for the entered certificate ID
-    //     const snapshot = await certificatesRef.orderByChild('certificateID').equalTo(verificationID).once('value');
-    //     const isValidCertificate = snapshot.exists();
+        // Query the Firebase database for the entered certificate ID
+        // const snapshot = await certificatesRef.orderByChild('certificateID').equalTo(verificationID).once('value');
+        // const isValidCertificate = snapshot.exists();
     
-    //     if (isValidCertificate) {
-    //       // Certificate is verified
-    //       console.log('Certificate is verified');
-    //     } else {
-    //       // Certificate is not issued by the university
-    //       console.log('Certificate is not issued by the university');
-    //     }
-    //   } catch (e) {
-    //     setError(e.message);
-    //     console.log(e.message);
-    //   }
-    // };
+        if (verificationID == '2022s34526356') {
+          // Certificate is verified
+          alert('Certificate is issued by the university')
+          console.log('Certificate is verified');
+        } else {
+          // Certificate is not issued by the university
+          alert('Certificate is not issued by the university')
+          console.log('Certificate is not issued by the university');
+        }
+    };
    return(
     <div className='max-w-[700px] mx-auto my-16 p-4'>
           <Link to='/signup' style={{ color: 'blue', margin: '10px', }}>
@@ -46,9 +43,10 @@ const CertVerification = () => {
           type='text'
         />
       </div>
-      <button>
+      <button onClick={handleSubmit}>
         Verify
       </button>
+      <p>Use 2022s34526356 for sample verification</p>
     </form>
     </div>
     
