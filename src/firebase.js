@@ -8,6 +8,7 @@ import { getAuth } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyDZLsNbWv1Vpat9BmlRP5-5lcilBZRmtSQ",
   authDomain: "university-cert.firebaseapp.com",
+  databaseURL: "https://university-cert-default-rtdb.firebaseio.com",
   projectId: "university-cert",
   storageBucket: "university-cert.appspot.com",
   messagingSenderId: "897703350771",
